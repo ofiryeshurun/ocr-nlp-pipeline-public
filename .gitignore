@@ -1,0 +1,45 @@
+# --- Environments and secrets ---
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# --- Data (never versioned; see docs/development.md) ---
+images/
+cache/
+data/splits.csv
+
+# --- Generated outputs (reproducible from code) ---
+models/
+results/
+results.csv
+outputs/
+dist/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- LaTeX build files ---
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/settings.local.json

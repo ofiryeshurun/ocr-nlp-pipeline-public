@@ -1,0 +1,16 @@
+# Development tools: the test suite and the optional v2 classifier arm (frozen sentence embeddings),
+# which scripts/compare_models.py can compare. The default model does not use v2, so its packages
+# live here, not in requirements.txt. Installs the runtime requirements too.
+-r requirements.txt
+
+# CPU-only PyTorch wheels come from the PyTorch index; everything else from PyPI.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# --- v2 text encoder: frozen all-MiniLM-L6-v2 (model revision pinned in code) ---
+torch==2.14.1+cpu
+sentence-transformers==6.1.0
+transformers==5.18.0
+tokenizers==0.23.2
+
+# --- Tests ---
+pytest==9.1.1

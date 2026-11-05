@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-nlp-pipeline"
+version = "0.1.0"
+description = "Classify images as alcohol / non_alcohol from the text in them: OCR, text cleaning and text classification on CPU."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+# Runtime dependencies are pinned in requirements.txt (exact versions for reproducibility).
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

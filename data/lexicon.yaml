@@ -1,0 +1,198 @@
+# Alcohol lexicon for the fuzzy lexicon matcher.
+#
+# - Strong terms only: one match is enough to flag an image as alcohol.
+# - Built from general domain knowledge (drink types, major brands, classic
+#   cocktails), NOT from the training data, so it can cover vocabulary that
+#   new data may use.
+# - Write terms in plain letters. The loader cleans them like OCR text
+#   (lowercase, accents and punctuation removed), so "Moët" is stored as "moet"
+#   and "Jack Daniel's" as "jack daniels".
+#
+# Left out on purpose:
+# - Everyday words and names that are also drink names, because they would
+#   flag ordinary text: corona, patron, malibu, manhattan, rose, spirits, shot,
+#   sake, rye, punch, porter, bitter, mild, stella, miller, bud (also cannabis),
+#   blue moon, fireball, wild turkey, southern comfort, cosmopolitan, mimosa,
+#   bellini, old fashioned, barefoot, yellow tail.
+# - Words that also name non-alcoholic products: cider (apple cider), scotch
+#   (butterscotch). Their unambiguous forms stay ("hard cider", whisky).
+# - Venue and context words (bar, pub, brewery, winery, nightlife, cheers) and
+#   "brew": never decisive, and the lexicon has no weak list.
+# - Exclusions for hard negatives ("ginger ale", "root beer", "mocktail"): none
+#   up front; added only if evidence shows them.
+
+categories:
+  general:
+    - alcohol
+    - liquor
+    - booze
+    - moonshine
+    - hard seltzer
+    - hard cider
+    - hard lemonade
+
+  beer:
+    - beer
+    - lager
+    - ale
+    - stout
+    - pilsner
+    - ipa
+    - hefeweizen
+    - weissbier
+    - witbier
+    - kolsch
+    - lambic
+    - shandy
+    - radler
+
+  wine:
+    - wine
+    - champagne
+    - prosecco
+    - cava
+    - moscato
+    - lambrusco
+    - merlot
+    - cabernet
+    - sauvignon
+    - chardonnay
+    - pinot
+    - riesling
+    - shiraz
+    - syrah
+    - malbec
+    - zinfandel
+    - tempranillo
+    - sangiovese
+    - chianti
+    - rioja
+    - beaujolais
+    - port  # whole word only, so "support" and "airport" don't match
+    - sherry
+    - vermouth
+    - mead
+
+  spirits:
+    - vodka
+    - gin
+    - rum
+    - whiskey
+    - whisky
+    - bourbon
+    - tequila
+    - mezcal
+    - brandy
+    - cognac
+    - armagnac
+    - liqueur
+    - schnapps
+    - absinthe
+    - grappa
+    - ouzo
+    - raki
+    - sambuca
+    - limoncello
+    - aquavit
+    - pisco
+    - cachaca
+    - soju
+    - baijiu
+
+  cocktails:
+    - cocktail
+    - margarita
+    - mojito
+    - martini
+    - negroni
+    - daiquiri
+    - spritz
+    - sangria
+    - pina colada
+    - mai tai
+    - caipirinha
+    - cuba libre
+    - mint julep
+    - bloody mary
+    - hot toddy
+    - irish coffee
+    - white russian
+    - long island iced tea
+
+  beer_brands:
+    - heineken
+    - budweiser
+    - bud light
+    - stella artois
+    - guinness
+    - carlsberg
+    - coors
+    - miller lite
+    - michelob
+    - modelo
+    - pabst
+    - peroni
+    - tsingtao
+    - asahi
+    - kirin
+    - amstel
+    - grolsch
+    - hoegaarden
+    - leffe
+    - duvel
+    - chimay
+    - dos equis
+    - tecate
+    - lagunitas
+
+  spirit_brands:
+    - smirnoff
+    - absolut
+    - grey goose
+    - ketel one
+    - ciroc
+    - jack daniels
+    - jim beam
+    - johnnie walker
+    - jameson
+    - makers mark
+    - crown royal
+    - bacardi
+    - captain morgan
+    - havana club
+    - sailor jerry
+    - hennessy
+    - remy martin
+    - courvoisier
+    - jose cuervo
+    - don julio
+    - tanqueray
+    - bombay sapphire
+    - glenfiddich
+    - glenlivet
+    - macallan
+    - chivas regal
+    - jagermeister
+    - kahlua
+    - cointreau
+    - grand marnier
+    - disaronno
+    - aperol
+    - campari
+
+  wine_brands:
+    - moet
+    - chandon
+    - dom perignon
+    - veuve clicquot
+    - freixenet
+    - sutter home
+    - beringer
+    - robert mondavi
+    - kendall jackson
+    - casillero del diablo
+    - jacobs creek
+
+  ready_to_drink:
+    - white claw
+    - twisted tea

@@ -1,0 +1,20 @@
+# Runtime dependencies: the third-party packages the code imports, pinned to the tested versions.
+# Tested on Python 3.12.10, Windows 11, CPU-only. Install from this folder: pip install -r requirements.txt
+
+# --- OCR ---
+paddleocr==3.7.0
+paddlepaddle==3.3.1                # paddleocr's inference backend (CPU build); never imported directly
+opencv-contrib-python==4.10.0.84   # provides cv2; the OpenCV build paddleocr's dependency PaddleX requires
+
+# --- Data and ML ---
+numpy==2.3.5
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0                      # saves and loads the fitted classifier (models/)
+rapidfuzz==3.14.6                  # fuzzy lexicon matching
+PyYAML==6.0.2                      # reads data/lexicon.yaml
+matplotlib==3.11.2                 # confusion-matrix figure in scripts/evaluate.py
+
+# --- This project (src/alcohol_detector), editable install ---
+-e .
